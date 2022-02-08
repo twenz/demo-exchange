@@ -6,9 +6,6 @@ export const BUSD_THB = 'BUSD_THB'
 
 
 
-
-
-
 // export function getExchangeAction(exchange) {
 //   debugger
 //   return {

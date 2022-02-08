@@ -1,7 +1,5 @@
-import logo from './logo.svg';
-// import './App.css';
 import './App.less';
-import Main from './page/Main';
+// import './style/styles.sass'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
@@ -18,13 +16,7 @@ const store = createStore(
   applyMiddleware(sagaMiddleware)
 )
 sagaMiddleware.run(rootSagas)
-
-// const action = type => store.dispatch({ type })
-
 function App() {
-  // const ss = router
-  // console.log('file: App.js ~ line 25 ~ ss', ss)
-  // debugger
   return (
     <Provider store={store}>
       <MainLayout>
@@ -32,7 +24,6 @@ function App() {
           {router}
         </Router>
       </MainLayout>
-      {/* <Main /> */}
     </Provider>
   );
 }
