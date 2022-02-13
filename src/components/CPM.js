@@ -6,8 +6,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useAsync } from 'react-use';
 import { BTC_THB, SEE_EXCHANGE, USDT_THB, BUSD_THB } from '../redux-saga/actions';
 
-import '../style/styles.sass'
-
 
 const basePath = '/market'
 const CPM = () => {
@@ -41,13 +39,13 @@ const CPM = () => {
           <Row >
             <Col span={24}>
               <Row justify='center'>
-                <Button className='exchBtn' onClick={() => initBtn(BTC_THB)}>
+                <Button type='primary' className='exchBtn' onClick={() => initBtn(BTC_THB)}>
                   BTC_THB
                 </Button>
-                <Button className='exchBtn' onClick={() => initBtn(USDT_THB)}>
+                <Button type='dashed' className='exchBtn' onClick={() => initBtn(USDT_THB)}>
                   USDT_THB
                 </Button>
-                <Button className='exchBtn' onClick={() => initBtn(BUSD_THB)}>
+                <Button type='link' className='exchBtn' onClick={() => initBtn(BUSD_THB)}>
                   BUSD_THB
                 </Button>
               </Row>
