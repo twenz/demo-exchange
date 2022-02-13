@@ -1,6 +1,4 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects'
-import { GET_ALL_EXCHANGE, SEE_ALL_EXCHANGE } from './actions'
-
+import { all, call, fork, put, takeEvery, takeLatest } from 'redux-saga/effects'
 // const delay = (ms) => new Promise(res => setTimeout(res, ms))
 
 // Our worker Saga: will perform the async increment task
@@ -9,15 +7,15 @@ import { GET_ALL_EXCHANGE, SEE_ALL_EXCHANGE } from './actions'
 //   yield put({ type: 'INCREMENT' })
 // }
 
-export function* getExchange() {
-  // debugger
-  yield put({ type: GET_ALL_EXCHANGE })
-}
-
-// export function* helloSaga() {
-//   console.log('Hello Sagas!')
+// export function getExchangeApi(type) {
+//   debugger
+//   return exchange(type)
 // }
-export default function* watchExchange() {
-  // debugger 
-  yield takeEvery(SEE_ALL_EXCHANGE, getExchange)
+export function* helloSaga() {
+  console.log('Hello Sagas!')
+}
+export default function* root(type) {
+  yield all([
+    helloSaga()
+  ])
 }

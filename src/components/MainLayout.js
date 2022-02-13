@@ -1,13 +1,15 @@
-import { Layout } from 'antd';
+import { Layout, Row } from 'antd';
 import React from 'react';
 
 const MainLayout = ({ children }) => {
   return (
-    <Layout>
+    <Layout style={{ height: '100vh' }}>
       <Layout.Header>
-        Header
+        <Row justify='center' style={{ color: 'white', fontSize: '24px' }}>
+          Header
+        </Row>
       </Layout.Header>
-      <Layout.Content>
+      <Layout.Content style={{ height: '100%' }}>
         {children}
       </Layout.Content>
     </Layout>

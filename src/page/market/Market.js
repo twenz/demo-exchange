@@ -1,11 +1,16 @@
+import { Button, Col, Row } from 'antd';
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const Market = ({ children }) => {
-  console.log('file: Market.js ~ line 8 ~ children', children)
+  const nav = useNavigate()
   return (
-    <>
-      Market
-    </>
+    <Row justify='center' align='middle' style={{ height: '100%' }}>
+      <Col>
+        <Row justify='center'>Market</Row>
+        <Button onClick={() => nav('All_Coin')}>Go Exchange</Button>
+      </Col>
+    </Row>
   )
 }
 

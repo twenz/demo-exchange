@@ -9,15 +9,15 @@ const router = () => {
     {
       path: '/',
       element: Main,
-      index: true
+      // index: true
     },
     ...market
   ]
   const initRoute = _router.map((route, i) => {
-    const _route = route?.element ? { key: i, element: route.element } : { path: route?.path, key: i }
+    const _route = route?.element ? { key: i, path: route?.path, element: <route.element /> } : { path: route?.path, key: i }
     const subRoute = _.get(route, 'components', [])
     const _SubRoute = !isEmpty(subRoute) ? subRoute.map((e, _i) => {
-      const _r = <Route index={e.index || false} path={e?.path} element={<e.element simbol={e?.path ? e?.path.toLowerCase() : ''}/>} />
+      const _r = <Route index={e.index || false} path={e?.path} element={<e.element simbol={e?.path ? e?.path.toLowerCase() : ''} />} />
       return _r
     }) : null
     const setting = (
